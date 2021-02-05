@@ -9,13 +9,17 @@ namespace Business.Concrete
 {
     public class CarManager : ICarService
     {
-        ICarDal _iCarDal;
+        IEntityRepository _iCarDal;
         
 
-        public CarManager(ICarDal carDal )
+        public CarManager(IEntityRepository carDal )
         {
             _iCarDal = carDal;
         }
+
+       
+
+        
 
        
 
@@ -25,10 +29,15 @@ namespace Business.Concrete
             Console.WriteLine(car.Id +" numaralı araç başarıyla eklendi.");
         }
 
-        public void Delete(int carId)
+        public void Delete(Car car)
         {
-            _iCarDal.Delete(carId);
-            Console.WriteLine(carId + "numaralı araç başarıyla silindi.");
+            _iCarDal.Delete(car);
+            Console.WriteLine(car.Id + "numaralı araç başarıyla silindi.");
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Car> GetAll()
@@ -39,8 +48,18 @@ namespace Business.Concrete
         public List<Car> GetById(int id)
         {
             Console.WriteLine(id + " numaralı araç gösteriliyor.");
-            return _iCarDal.GetById(id);
+            return _iCarDal.GetAll(p=>p.Id == id);
 
+        }
+
+        public List<Car> GetCarsByBrandId(int id)
+        {
+            return _iCarDal.GetAll(p => p.BrandId == id);
+        }
+
+        public List<Car> GetCarsByColorId(int id)
+        {
+            return _iCarDal.GetAll(p => p.ColorId == id);
         }
 
         public void Update(Car car)
