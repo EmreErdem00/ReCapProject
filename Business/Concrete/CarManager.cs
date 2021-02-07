@@ -9,19 +9,13 @@ namespace Business.Concrete
 {
     public class CarManager : ICarService
     {
-        IEntityRepository _iCarDal;
+        ICarDal _iCarDal;
         
 
-        public CarManager(IEntityRepository carDal )
+        public CarManager(ICarDal carDal )
         {
             _iCarDal = carDal;
         }
-
-       
-
-        
-
-       
 
         public void Add(Car car)
         {

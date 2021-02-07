@@ -34,9 +34,9 @@ namespace ConsoleUI
             //});
 
 
-            foreach (var item in brandManager.GetAll())
+            foreach (var item in carManager.GetAll())
             {
-                Console.WriteLine(item.Name);
+                Console.WriteLine(item.Name + " / "+ item.ModelYear);
             }
 
             Console.ReadKey();
