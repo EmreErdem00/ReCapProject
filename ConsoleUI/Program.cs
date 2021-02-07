@@ -34,9 +34,14 @@ namespace ConsoleUI
             //});
 
 
-            foreach (var item in carManager.GetAll())
+            //foreach (var item in carManager.GetAll())
+            //{
+            //    Console.WriteLine(item.Name + " / "+ item.ModelYear);
+            //}
+
+            foreach (var item in carManager.GetCarDetails())
             {
-                Console.WriteLine(item.Name + " / "+ item.ModelYear);
+                Console.WriteLine(item.CarName + " / " + item.BrandName + " / " + item.ColorName + " / " + item.DailyPrice);
             }
 
             Console.ReadKey();

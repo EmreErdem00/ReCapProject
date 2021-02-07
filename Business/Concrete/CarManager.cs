@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -44,6 +45,11 @@ namespace Business.Concrete
             Console.WriteLine(id + " numaralı araç gösteriliyor.");
             return _iCarDal.GetAll(p=>p.Id == id);
 
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            return _iCarDal.GetCarDetails();
         }
 
         public List<Car> GetCarsByBrandId(int id)
