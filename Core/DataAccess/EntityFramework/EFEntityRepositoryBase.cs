@@ -9,7 +9,7 @@ using System.Text;
 namespace Core.DataAccess.EntityFramework
 {
     public class EFEntityRepositoryBase<TEntity,TContext>:IEntityRepository<TEntity>
-        where TEntity:class,ICar,new()
+        where TEntity:class,IEntity,new()
         where TContext:DbContext,new()
     {
         public void Add(TEntity entity)
