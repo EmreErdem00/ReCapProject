@@ -1,5 +1,7 @@
-﻿    using System;
+﻿using Entities.Concrete;
+using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -27,8 +29,14 @@ namespace Business.Constants
         public static string RentUpdated = "Rent güncellendi";
         public static string RentsShowed = "Rent gösterildi";
 
-
-
+        public static string NoMoreImage = "5 adetten fazla araç resmi yüklenemez";
+        public static string ImagesAdded ="Resim başarıyla eklendi";
+        public static string CarImageAdded ="Araç resmi eklendi";
+        public static string CarImageDeleted="Araç resmi silindi";
+        public static string CarImageUpdated="Araç resmi güncellendi";
+        public static string GetCarImageById ="Araç id sine göre resimler listelendi ";
+        public static string GetById ="Resim idsine göre getirildi";
+        public static string AuthorizationDenied ="Rollendirme izni verilmedi";
     }
 }
 
